@@ -1,0 +1,172 @@
+body {
+  background-image: url('/images/todo.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.home {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #f4f7fc;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  font-size: 2.2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.empty-message {
+  text-align: center;
+  font-size: 1.2em;
+  color: #777;
+}
+
+.task {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.task:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.task.completed {
+  background-color: #c8fac8;
+  opacity: 0.9;
+  transition: all 0.3s ease-in-out;
+}
+
+.task.completed .checkbox p {
+  text-decoration: line-through;
+  color: #6b6b6b;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.checkbox p {
+  font-size: 1.2em;
+  cursor: pointer;
+  margin: 0;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.checkbox p:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.due-date {
+  font-size: 1em;
+  color: #7f8c8d;
+  margin-left: 10px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.icon {
+  font-size: 1.3em;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.icon:hover {
+  background-color: rgba(0, 123, 255, 0.2);
+  transform: scale(1.2);
+}
+
+.edit-icon {
+  color: #f39c12;
+}
+
+.trash-icon {
+  color: #e74c3c;
+}
+
+.trash-icon:hover {
+  background-color: rgba(231, 76, 60, 0.2);
+}
+
+.checkbox input[type="text"], .checkbox input[type="date"] {
+  border: 1px solid #ccc;
+  padding: 10px 18px;
+  border-radius: 6px;
+  margin-left: 10px;
+  font-size: 1.1em;
+  width: 250px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.checkbox input[type="date"] {
+  width: 180px;
+}
+
+input:focus {
+  outline: 2px solid #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.6);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .task {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .checkbox input[type="text"], .checkbox input[type="date"] {
+    width: 100%;
+  }
+
+  .actions {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .icon {
+    margin-left: 5px;
+  }
+}
